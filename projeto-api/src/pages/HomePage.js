@@ -8,7 +8,7 @@ function Homepage() {
   return (
     <div>
       <Header />
-      <h1>sou a home</h1>
+      <h1>sou </h1>
     </div>
   );
 }
