@@ -81,37 +81,6 @@ function Header() {
     }
   };
   return <>{renderHeader()}</>;
-
-  //   <Button
-  //     w={"16rem"}
-  //     h={"4rem"}
-  //     br={"2rem"}
-  //     bg={"none"}
-  //     fontSize={"1.5rem"}
-  //     as={"u"}
-  //     onClick={() => {
-  //       goHome(navigate, "/");
-  //     }}>
-  //     <ChevronLeftIcon />
-  //     Todos os Pokemons
-  //   </Button>
-  //   <Image src={image} alt="image logo pokemon" />
-  //   <Button
-  //     w={"16rem"}
-  //     h={"4rem"}
-  //     br={"2rem"}
-  //     bg={"#33a4f5"}
-  //     color={"white"}
-  //     onClick={() => {
-  //       goToPokedex(navigate, "pokedex");
-  //     }}>
-  //     Pokédex
-  //   </Button>
-  //   <Button w={"16rem"} h={"4rem"} br={"2rem"} bg={"#FF6262"} color={"white"}>
-  //     Excluir da Pokédex
-  //   </Button>
-  // </Flex>
-  //);
 }
 
 export default Header;

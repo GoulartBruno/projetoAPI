@@ -41,12 +41,14 @@ const PokemonProvider = ({ children }) => {
 
   return (
     <PokemonContext.Provider
-      pokemon
-      setPokemon
-      pokedex
-      setPokedex
-      addToPokedex
-      removeFromPokedex>
+      value={{
+        pokemon,
+        setPokemon,
+        pokedex,
+        setPokedex,
+        addToPokedex,
+        removeFromPokedex,
+      }}>
       {children}
     </PokemonContext.Provider>
   );
