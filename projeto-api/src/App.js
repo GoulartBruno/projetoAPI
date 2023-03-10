@@ -1,14 +1,14 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Router } from "./routes/Router";
-import Homepage from "./pages/HomePage";
+import Home from "./pages/HomePage";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <ChakraProvider resetCSS>
         <Router>
-          <Homepage />
+          <Home />
         </Router>
       </ChakraProvider>
     </div>
