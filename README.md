@@ -58,7 +58,7 @@ $ npm run start
 
 ## Author
 
-Michelle Antunes, março/2023. <br>
+Bruno Goulart, março/2023. <br>
 [Linkedin](https://www.linkedin.com/in/goulartbruno)
 
 ## Next steps
