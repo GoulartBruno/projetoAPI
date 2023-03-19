@@ -20,7 +20,7 @@ The aim of this project is to create a website with three pages using Poke Api a
 
 ### Video:
 
-[![Assista ao vídeo](https://youtu.be/7CE03MrhRXA)]
+[![Assista ao vídeo](https://img.youtube.com/vi/7CE03MrhRXA/maxresdefault.jpg)](https://www.youtube.com/watch?v=7CE03MrhRXA)
 
 ### Home page:
 
