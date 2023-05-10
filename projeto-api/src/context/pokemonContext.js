@@ -1,11 +1,18 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
+import bug from "../assets/bug.png";
+import fire from "../assets/fire.png";
+import grass from "../assets/grass.png";
+import normal from "../assets/normal.png";
+import water from "../assets/water.png";
+import wings from "../assets/wings.png";
 
 export const PokemonContext = createContext();
 
 const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [pokedex, setPokedex] = useState([]);
+  const [details, setDetails] = useState([]);
 
   const getPokemon = () => {
     let pokemonPoint = [];
@@ -20,33 +27,46 @@ const PokemonProvider = ({ children }) => {
   useEffect(() => {
     getPokemon();
   }, []);
-  function addToPokedex(pokemon) {
-    const isAlreadyOnPokedex = pokedex.find(
-      (pokemonInPokedex) => pokemonInPokedex.id === pokemon.id
-    );
 
-    if (!isAlreadyOnPokedex) {
-      const newPokedex = [...pokedex, pokemon];
+  const removeFromPokedex = (pokemonToRemove, onOpen, onClose) => {
+    onOpen();
+    setTimeout(() => {
+      onClose();
+      const newPokedex = pokedex.filter(
+        (pokemonInPokedex) =>
+          pokemonInPokedex.data.name !== pokemonToRemove.data.name
+      );
       setPokedex(newPokedex);
-    }
-  }
+    }, 1000);
+  };
 
-  function removeFromPokedex(pokemon) {
-    const newPokedex = pokedex.filter(
-      (pokemonInPokedex) => pokemonInPokedex.id !== pokemon.id
-    );
-
-    setPokedex(newPokedex);
-  }
+  const addToPokedex = (pokemonToAdd, onOpen, onClose) => {
+    onOpen();
+    setTimeout(() => {
+      onClose();
+      const newPokedex = [...pokedex, pokemonToAdd];
+      setPokedex(newPokedex);
+    }, 200);
+  };
 
   return (
     <PokemonContext.Provider
-      pokemon
-      setPokemon
-      pokedex
-      setPokedex
-      addToPokedex
-      removeFromPokedex>
+      value={{
+        pokemon,
+        setPokemon,
+        pokedex,
+        setPokedex,
+        addToPokedex,
+        removeFromPokedex,
+        grass,
+        fire,
+        bug,
+        normal,
+        getPokemon,
+        details,
+        water,
+        wings,
+      }}>
       {children}
     </PokemonContext.Provider>
   );
